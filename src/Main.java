@@ -6,24 +6,42 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
 
-        //Local do arquivo de texto
-        String caminhodotexto = "C:\\Users\\pablo\\Desktop\\dimmy.txt";
+        // Local do arquivo de texto
+        String caminhoTexto = "C:\\Users\\pablo\\Desktop\\texto.txt";
 
-        //Leitor e printador do texto
-        try(BufferedReader reader = new BufferedReader(new FileReader(caminhodotexto))){
+        try (BufferedReader reader = new BufferedReader(new FileReader(caminhoTexto))) {
             System.out.println("Texto localizado\n");
 
             String linha;
-            while((linha = reader.readLine()) != null){
-                System.out.println(linha);
+
+            //Pular linha do com o exemplo
+            boolean primeiraLinha = true;
+
+            while ((linha = reader.readLine()) != null) {
+                if (primeiraLinha) {
+                    primeiraLinha = false;
+                    continue;
+                }
+
+                String[] partes = linha.split(","); //Dividir palavras por vírgula
+
+                //Transformar palavras e números escritos em dados
+                int id = Integer.parseInt(partes[0].trim());
+                String nome = partes[1].trim();
+                String prioridade = partes[2].trim();
+                int ciclos = Integer.parseInt(partes[3].trim());
+                boolean precisaDisco = Boolean.parseBoolean(partes[4].trim());
+
+                Processo p = new Processo(id, nome, prioridade, ciclos, precisaDisco);
+
+                System.out.println(p);
             }
         }
-
-        //Failsafe para caso o programa não localize o .txt
-        catch (FileNotFoundException e){
+        //Failsafe para caso texto não seja localizado
+        catch (FileNotFoundException e) {
             System.out.println("Texto não foi localizado");
         }
-        catch (IOException e){
+        catch (IOException e) {
             System.out.println("Algo deu errado");
         }
     }
