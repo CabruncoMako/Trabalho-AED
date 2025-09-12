@@ -6,5 +6,7 @@ public class Node {
 	public Node(Processo p) {
 	this.p=p;
 	this.next=null;
+	
 	}
+	
 }
