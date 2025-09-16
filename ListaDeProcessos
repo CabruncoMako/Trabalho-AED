@@ -2,9 +2,10 @@ public class ListaDeProcessos {
     private Node primeiro;
     private Node ultimo;
     private int tamanho;
-}
-    public listaDeProcessos() {
+
+    public ListaDeProcessos() {
         this.primeiro = null;
+        this.ultimo = null;
         this.tamanho = 0;
     }
 
