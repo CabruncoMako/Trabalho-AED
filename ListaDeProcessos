@@ -1,21 +1,8 @@
 import java.lang.StringBuilder;
 
-public class listaDeProcessos {
+public class ListaDeProcessos {
     private Node primeiro;
     private int tamanho;
-
-private class Node{
-    private Processo processo;
-    private Node next;
-
-    public Node(Processo processo){
-        this.processo = processo;
-        this.next = null;
-    }
-
-    public Processo getProcesso() {
-        return processo;
-    }
 }
     public listaDeProcessos() {
         this.primeiro = null;
