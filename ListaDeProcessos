@@ -1,7 +1,6 @@
-import java.lang.StringBuilder;
-
 public class ListaDeProcessos {
     private Node primeiro;
+    private Node ultimo;
     private int tamanho;
 }
     public listaDeProcessos() {
@@ -17,23 +16,25 @@ public class ListaDeProcessos {
         Node novoNo = new Node(processo);
         if (estaVazia()) {
             this.primeiro = novoNo;
+            this.ultimo = novoNo;
         } else {
-            Node noAtual = this.primeiro;
-            while (noAtual.next != null) {
-                noAtual = noAtual.next;
-            }
-            noAtual.next = novoNo;
-        }
+            this.ultimo.next = novoNo;
+            this.ultimo = novoNo;
+    }
         tamanho++;
     }
 
-    public Processo Removerprimeiro() {
+    public Processo removerPrimeiro() {
         if (estaVazia()) {
             return null;
         }
         Processo processoRemovido = this.primeiro.getProcesso();
         this.primeiro = this.primeiro.next;
         tamanho--;
+
+        if (estaVazia()){
+           ultimo = null;
+       }
         return processoRemovido;
     }
 
@@ -53,7 +54,7 @@ public class ListaDeProcessos {
         sb.append("[");
         Node noAtual = this.primeiro;
         while (noAtual != null) {
-            sb.append(noAtual.getProcesso().getNome();
+            sb.append(noAtual.getProcesso().getNome());
             if (noAtual.next != null) {
                 sb.append(", ");
             }
