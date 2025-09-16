@@ -14,9 +14,11 @@ class Processo {
         this.ciclosNecessarios = ciclosNecessarios;
         this.precisaDisco = precisaDisco;
     }
+    //
     public void executarUmCiclo() {
     	if(ciclosNecessarios>0) ciclosNecessarios--;
     }
+    //
     public boolean terminou() {
     	return ciclosNecessarios<= 0;
     }
