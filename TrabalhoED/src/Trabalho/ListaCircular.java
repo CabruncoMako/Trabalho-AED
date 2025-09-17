@@ -9,13 +9,13 @@ public class ListaCircular {
         this.size = 0;
     }
 
-    public boolean isEmpty() {
+    public boolean estaVazia() {
         return size == 0;
     }
 
     public void adicionar(Processo p) {
         Node novo = new Node(p);
-        if (isEmpty()) {
+        if (estaVazia()) {
             tail = novo;
             tail.setNext(tail);
         } else {
@@ -27,7 +27,7 @@ public class ListaCircular {
     }
 
     public Processo remover() {
-        if (isEmpty()) {
+        if (estaVazia()) {
             return null;
         }
 
@@ -44,7 +44,7 @@ public class ListaCircular {
     }
 
     public Processo pegarprimeiro() {
-        if (isEmpty()) {
+        if (estaVazia()) {
             return null;
         }
         return tail.getNext().getProcesso();
@@ -56,7 +56,7 @@ public class ListaCircular {
 
     @Override
     public String toString() {
-        if (isEmpty()) {
+        if (estaVazia()) {
             return "[]";
         }
         StringBuilder sb = new StringBuilder();

@@ -34,5 +34,9 @@ class Processo {
                 ", precisaDisco=" + precisaDisco +
                 '}';
     }
+	public Object getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

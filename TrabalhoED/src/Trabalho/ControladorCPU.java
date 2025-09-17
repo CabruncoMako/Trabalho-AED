@@ -8,7 +8,7 @@ public class ControladorCPU {
 	
 	private int contadorAlta;
 	
-	public ContadorCPU() {
+	public ControladorCPU() {
 		Alta = new ListaDeProcessos();
 		Media = new ListaDeProcessos();
 		Baixa = new ListaDeProcessos();
@@ -25,15 +25,15 @@ public class ControladorCPU {
             Baixa.adicionar(p);
         }
 			}
-	public boolean hasWork{
+	public boolean hasWork(){
 		return !Alta.estaVazia() || !Media.estaVazia() || !Baixa.estaVazia() || !Bloqueados.estaVazia();
 	}
-	public void CicloDaCPU( cicloNumero) {
-		System.out.println("/n   CICLO   "+cicloNumero);
-	}
-	if(bloqueados.estaVazia()) {
-		processo desbloqueado = bloqueados.rremover();
-		adicionarProcesso(desbloqueado);
+	public void CicloDaCPU(int cicloNumero) {
+		System.out.println("/n===CICLO==="+cicloNumero);
+	
+	if(Bloqueados.estaVazia()) {
+		Processo desbloqueado = Bloqueados.remover();
+		AdicionarProcessos(desbloqueado);
         System.out.println("Desbloqueado do DISCO: " + desbloqueado);
 	}
 	Processo p = escolherProcesso();
@@ -45,19 +45,19 @@ public class ControladorCPU {
 	System.out.println("Escalonado: " + p);
 	
 	 if (p.precisaDisco) {
-         bloqueados.adicionar(p);
+         Bloqueados.adicionar(p);
          System.out.println("Processo " + p.id + " bloqueado (precisa de DISCO).");
          return;
      }
-	 p.executarCiclo();
+	 p.executarUmCiclo();
      if (p.terminou()) {
          System.out.println("Processo " + p.id + " terminou!");
      } else {
-         adicionarProcesso(p);
+         AdicionarProcessos(p);
          System.out.println("Processo " + p.id + " executou 1 ciclo. Restam " + p.ciclosNecessarios);
      }
 }
-     private Processo escolherprocesso() {
+     private Processo escolherProcesso() {
     	 Processo escolhido = null;
     	 
     	 if (contadorAlta >= 5) {
