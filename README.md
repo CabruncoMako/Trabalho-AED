@@ -6,7 +6,7 @@ Lembrando que o nome do arquivo e o formato .txt devem ser incluídos para que s
 
 Dentro do texto, serão digitados, respectivamente: id(INT), nome(STRING), prioridade(ALTA/MEDIA/BAIXA), ciclos(INT), precisa de disco(BOOLEAN), assim como no exemplo abaixo:
 
-id(INT), nome(STRING), prioridade(ALTA/MEDIA/BAIXA), ciclos(INT), precisa de disco(BOOLEAN)
+id, nome, prioridade, ciclos, precisa de disco
 1,P1,alta,4,false
 2,P2,media,3,true
 3,P3,baixa,2,false
