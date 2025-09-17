@@ -12,4 +12,5 @@ id(INT), nome(STRING), prioridade(ALTA/MEDIA/BAIXA), ciclos(INT), precisa de dis
 3,P3,baixa,2,false
 4,P4,alta,5,true
 
+Os dados são separados por vírgulas e quebras de linha
 A primeira linha do txt será desconsiderada por questão de simplicidade e para que a primeira linha digitada sirva somente de norte para o usuário. Encorajamos a copiar a primeira linha do exemplo para facilitar a visualização na hora da escrita dos dados.
