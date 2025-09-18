@@ -1,4 +1,4 @@
-Matéria: Algoritmos e Estrutura de DadosI
+Matéria: Algoritmos e Estrutura de Dados I
 Professor: Dimmy Magalhães
 Integrantes:
 Pablo Canavarro de Sá
