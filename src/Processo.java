@@ -4,17 +4,17 @@ class Processo {
     String prioridade;
     int ciclosNecessarios;
     boolean precisaDisco;
+    boolean jaSolicitouDisco = false; // Controlar bloqueio da primeira vez
 
     public Processo(int id, String nome, String prioridade, int ciclosNecessarios, boolean precisaDisco) {
         this.id = id;
         this.nome = nome;
-        this.prioridade = prioridade;
+        this.prioridade = prioridade.toUpperCase();
         this.ciclosNecessarios = ciclosNecessarios;
         this.precisaDisco = precisaDisco;
     }
 
     @Override
-    //O println na main mostrará "Processo{id,nome,prioridade,ciclos,precisaDisco}
     public String toString() {
         return "Processo{" +
                 "id=" + id +
@@ -25,4 +25,3 @@ class Processo {
                 '}';
     }
 }
-
